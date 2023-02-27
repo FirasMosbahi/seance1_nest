@@ -12,7 +12,10 @@ import { AddTodoDto } from 'src/DTO/Todo/add_todo_dto';
 import { UpdateTodoDto } from 'src/DTO/Todo/update_todo_dto';
 import { TodoService } from './todo.service';
 
-@Controller('todo')
+@Controller({
+  path: 'todo',
+  version: '1',
+})
 export class TodoController {
   constructor(private todoService: TodoService) {}
   private todos: Array<Todo> = [];
