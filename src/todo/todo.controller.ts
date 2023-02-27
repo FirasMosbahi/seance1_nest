@@ -5,8 +5,8 @@ import {
   Get,
   Param,
   Patch,
-  Post,
-} from '@nestjs/common';
+  Post, UsePipes, ValidationPipe
+} from "@nestjs/common";
 import { Todo } from './todo';
 import { AddTodoDto } from 'src/DTO/Todo/add_todo_dto';
 import { UpdateTodoDto } from 'src/DTO/Todo/update_todo_dto';
@@ -21,6 +21,7 @@ export class TodoController {
     return this.todos;
   }
   @Post('/')
+  @UsePipes(ValidationPipe)
   addTodo(@Body() todo: AddTodoDto): void {
     this.todoService.addTodo(this.todos, todo);
   }
