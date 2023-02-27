@@ -1,6 +1,6 @@
-import { TodoStatusEnum } from "src/todo/todo";
-import { IsEnum, isEnum, MaxLength, MinLength } from "class-validator";
-import { ErrorMessages } from "./ErrorMessagesEnum";
+import { TodoStatusEnum } from 'src/todo/todo';
+import { IsEnum, isEnum, MaxLength, MinLength } from 'class-validator';
+import { ErrorMessages } from './ErrorMessagesEnum';
 
 const status = [
   TodoStatusEnum.waiting,

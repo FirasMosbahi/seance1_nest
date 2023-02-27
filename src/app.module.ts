@@ -16,15 +16,15 @@ import { TodoDbService } from './todo-db/todo-db.service';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
-      port: 4532,
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      port: 3306,
+      username: "root",
+      password: '',
+      database: "todo_db",
       autoLoadEntities: true,
       synchronize: true,
     }),
   ],
-  controllers: [AppController, TodoDbController],
-  providers: [AppService, TodoDbService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
