@@ -4,6 +4,17 @@ import { TodoStatusEnum } from '../todo/todo';
 
 @Entity('todo')
 export class TodoEntity extends EntityTracker {
+  constructor(
+    name: string,
+    description: string,
+    creationDate: Date,
+    status: TodoStatusEnum,
+  ) {
+    super();
+    this.name = name;
+    this.description = description;
+    this.status = status;
+  }
   @PrimaryGeneratedColumn('uuid')
   id: number;
   @Column({ name: 'name', length: 10 })

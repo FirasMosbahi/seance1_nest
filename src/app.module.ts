@@ -5,6 +5,8 @@ import { PremierModule } from './premier/premier.module';
 import { TodoModule } from './todo/todo.module';
 import { CommonModule } from './common/common.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TodoDbController } from './todo-db/todo-db.controller';
+import { TodoDbService } from './todo-db/todo-db.service';
 
 @Module({
   imports: [
@@ -22,7 +24,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, TodoDbController],
+  providers: [AppService, TodoDbService],
 })
 export class AppModule {}
