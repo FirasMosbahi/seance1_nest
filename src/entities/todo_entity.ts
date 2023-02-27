@@ -4,16 +4,11 @@ import { TodoStatusEnum } from '../todo/todo';
 
 @Entity('todo')
 export class TodoEntity extends EntityTracker {
-  constructor(
-    name: string,
-    description: string,
-    creationDate: Date,
-    status: TodoStatusEnum,
-  ) {
+  constructor(name: string, description: string) {
     super();
     this.name = name;
     this.description = description;
-    this.status = status;
+    this.status = TodoStatusEnum.waiting;
   }
   @PrimaryGeneratedColumn('uuid')
   id: number;
